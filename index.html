@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Hello world</title></head>
+  <script src="http://localhost:3000/socket.io-client/dist/socket.io.js" charset="utf-8"></script>
+
+  <script>
+    var socket = io('http://localhost:3000/india');
+
+    socket.on('hi', function (data) {
+      document.body.innerHTML = '';
+      document.write(data.description);
+    });
+
+    socket.emit('hey', 'Hey from client');
+  </script>
+  <body>Hello world</body>
+</html>
